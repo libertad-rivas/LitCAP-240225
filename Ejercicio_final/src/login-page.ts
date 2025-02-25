@@ -4,8 +4,6 @@ import { customElement } from "lit/decorators.js";
 @customElement("login-page")
 export class LoginPage extends LitElement{
 
-
-
     render() {
         return html`
             <header-page></header-page>
