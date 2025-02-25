@@ -3,7 +3,7 @@ import { MyForm } from "./ej2-login-form";
 import { html } from "lit";
 
 
-describe.skip("Set de pruebas unitardias del componente MyForm", () => {
+describe("Set de pruebas unitardias del componente MyForm", () => {
 
   it("[P01] - Should be a instance", async () => {
     let element : MyForm;

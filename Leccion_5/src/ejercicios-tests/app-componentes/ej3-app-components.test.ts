@@ -55,7 +55,14 @@ describe("Pruebas unitarias del componente AppPage", () => {
         const p = element.shadowRoot?.querySelector("p");
 
         expect(p).exist;
-        // expect(p).to.include(text);
+        
+        expect(element).shadowDom.equal(`<article>
+        <p>
+          Manage complexity by building large, complex components out of
+          smaller, simpler components that do one thing well.
+        </p>
+      </article>`);
+
     })
 
     it("[P07] - Should ", async () =>{

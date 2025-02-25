@@ -3,7 +3,7 @@ import { Extensions } from "./ej1-btn-masymenos";
 import { html } from "lit";
 
 
-describe.skip("Set de pruebas unitarias de componente AppExtensions", () => {
+describe("Set de pruebas unitarias de componente AppExtensions", () => {
 
     it("[P001] - Should be an instance", async()=>{
         let element: Extensions;

@@ -4,7 +4,7 @@ import { html } from "lit";
 import { emailValido, passwordValida } from "./ej2-form-utils";
 
 
-describe.skip("Set de pruebas unitarias del componente MyForm-utils", () => {
+describe("Set de pruebas unitarias del componente MyForm-utils", () => {
 
   it("[P01] - Should validate an email", async () => {
     let element: MyForm;

@@ -3,7 +3,7 @@ import { CardList } from "./ej4-card-list";
 import { html } from "lit";
 
 
-describe.skip("Set de pruebas unitarias del componente CardList", () =>{
+describe("Set de pruebas unitarias del componente CardList", () =>{
 
 
     it("[P01] - Should be an instance", async () => {

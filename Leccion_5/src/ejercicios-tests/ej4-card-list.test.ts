@@ -1,6 +1,6 @@
 
 
-describe.skip("Set de pruebas unitarias del componente CardUtils", () =>{
+describe("Set de pruebas unitarias del componente CardUtils", () =>{
 
 
     it("", async () => {})
