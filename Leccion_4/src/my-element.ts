@@ -5,7 +5,7 @@ import { fetchPackageInfo } from "./npm";
 import { map } from "lit/directives/map.js";
 
 @customElement("npm-info")
-class Npminfo extends LitElement {
+export class Npminfo extends LitElement {
   static styles = css`
     :host {
       display: block;
@@ -48,7 +48,7 @@ class Npminfo extends LitElement {
   render() {
     return html`
       <label>
-        Coloca un nombre de depencia:
+        Coloca un nombre de dependencia:
         <input .value=${this._packageName} @change=${this._onChange} />
       </label>
       <div>
