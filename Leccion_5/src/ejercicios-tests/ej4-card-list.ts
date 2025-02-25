@@ -45,8 +45,8 @@ export class CardList extends LitElement {
             (card) => html`
               <div class="card">
                 <img src="${card.image}" alt="${card.title}" />
-                <h2>Autor de la foto: ${card.title}</h2>
-                <p>Medidas: ${card.description}</p>
+                <h2> ${card.title}</h2>
+                <p> ${card.description}</p>
               </div>
             `
           )}

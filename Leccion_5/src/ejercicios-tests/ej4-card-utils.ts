@@ -23,9 +23,9 @@ export const fetchCardsTask = (context: any) =>
     const cardsData = await response.json();
 
     return cardsData.map((card: any) => ({
-        title: card.author,
+        title: `Autor de la foto: ${card.author}`,
         image: card.download_url,
-        description: `${card.width} x ${card.height}`,
+        description: `Medidas: ${card.width} x ${card.height}`,
     })) as ICardsData[];
   },
   args: () => [],
