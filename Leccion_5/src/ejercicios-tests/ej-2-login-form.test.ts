@@ -1,11 +1,6 @@
 import { expect, fixture } from "@open-wc/testing";
 import { MyForm } from "./ej2-login-form";
 import { html } from "lit";
-import { emailValido, passwordValida } from "./ej2-form-utils";
-
-
-
-
 
 
 describe.skip("Set de pruebas unitardias del componente MyForm", () => {
