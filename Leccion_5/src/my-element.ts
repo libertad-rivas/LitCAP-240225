@@ -8,13 +8,17 @@ export class MyElement extends LitElement {
     return html`<h1>Hola, Mundo!</h1>`;
   }
 
-  static styles = css``;
-  
-  sum(num1:number, num2:number){
-    if (isNaN(num1) || isNaN(num2)){
+  static styles = css`
+    h1 {
+      padding: 16px;
+    }
+  `;
+
+  sum(num1: number, num2: number) {
+    if (isNaN(num1) || isNaN(num2)) {
       throw new Error(msgError);
     }
-    let result = num1+num2;
+    let result = num1 + num2;
     return result;
   }
 }

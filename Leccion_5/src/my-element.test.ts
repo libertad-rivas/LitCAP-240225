@@ -34,8 +34,20 @@ describe("Set de pruebas unitarias de MyElement", () => {
     let element: MyElement;
     element = await fixture(html `<app-element></app-element>`);
     expect(element).shadowDom.equal("<h1>Hola, Mundo!</h1>");
-  }
+}
+
+// it ("should contain a padding of 16px", async ()=>{
+//     let element: MyElement;
+//     element = await fixture(html `<app-element></app-element>`);
+    
+//     await element.updateComplete;
+
+//     expect(getComputedStyle(element).padding).to.equal("16px");
+//   });
+
+
 
 
 
 });
+
