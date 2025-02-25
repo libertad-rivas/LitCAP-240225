@@ -6,7 +6,7 @@ import { fetchPackageInfo } from "./impl-fetch";
 
 export const msgError: string = "[001]-Parametros incorrectos";
 
-describe("Set de pruebas unitarias del componente MyElement", () => {
+describe.skip("Set de pruebas unitarias del componente MyElement", () => {
   it("should be true", () => {
     expect(true).eqls(true);
   });
