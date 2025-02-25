@@ -1,13 +1,22 @@
 import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
+import { msgError } from "./my-element.test";
 
-@customElement("my-element")
+@customElement("app-element")
 export class MyElement extends LitElement {
   render() {
-    return html`<p>Hola, Mundo!</p>`;
+    return html`<h1>Hola, Mundo!</h1>`;
   }
 
   static styles = css``;
+  
+  sum(num1:number, num2:number){
+    if (isNaN(num1) || isNaN(num2)){
+      throw new Error(msgError);
+    }
+    let result = num1+num2;
+    return result;
+  }
 }
 
 declare global {
