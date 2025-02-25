@@ -6,14 +6,15 @@ export interface ICardsData {
   description: string;
 }
 
-// "https://jsonplaceholder.typicode.com/photos"
-const url: string = "https://picsum.photos/v2/list";
+// const API_URL: string ="https://jsonplaceholder.typicode.com/photos"
+const API_URL: string = "https://picsum.photos/v2/list";
+// const API_KEY: string = "b798737f6091a921052fb5e7ce96f76ae25a2c1e";
 
 export const fetchCardsTask = (context: any) => 
   new Task(context, {
   task: async (_, { signal }) => {
 
-    const response = await fetch (url, {signal});
+    const response = await fetch (API_URL, {signal});
 
     if (!response.ok) {
         throw new Error("Error al obtener cards");

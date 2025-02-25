@@ -6,15 +6,27 @@ import { map } from "lit/directives/map.js";
 @customElement("card-list")
 export class CardList extends LitElement {
   static styles = css`
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     .card {
       border: 2px solid black;
       margin: 10px;
       border-radius: 10px;
       text-align: center;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: pink;
+      
     }
 
-    .card img{
-        height: 300px;
+    .card img {
+      max-width: 100%;
+      border-radius: 9px 9px 0px 0 px;
+    }
+
+    .error {
+      color: red;
     }
   `;
 
@@ -32,8 +44,8 @@ export class CardList extends LitElement {
             cards,
             (card) => html`
               <div class="card">
-                <h2>Autor de la foto: ${card.title}</h2>
                 <img src="${card.image}" alt="${card.title}" />
+                <h2>Autor de la foto: ${card.title}</h2>
                 <p>Medidas: ${card.description}</p>
               </div>
             `
