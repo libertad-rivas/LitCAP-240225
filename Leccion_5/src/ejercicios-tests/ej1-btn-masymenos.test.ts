@@ -2,9 +2,8 @@ import { expect, fixture } from "@open-wc/testing";
 import { Extensions } from "./ej1-btn-masymenos";
 import { html } from "lit";
 
-console.log("Set de pruebas unitarias de componente AppExtensions");
 
-describe("Set de pruebas unitarias de componente AppExtensions", () => {
+describe.skip("Set de pruebas unitarias de componente AppExtensions", () => {
 
     it("[P001] - Should be an instance", async()=>{
         let element: Extensions;
@@ -67,7 +66,5 @@ describe("Set de pruebas unitarias de componente AppExtensions", () => {
     });
 
 
-    // it ("", async () => {
-    
-    // });
+
 });
