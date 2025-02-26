@@ -3,7 +3,6 @@ import { customElement, state } from "lit/decorators.js";
 import "./components/header-page.ts";
 import "./components/article-page.ts";
 import "./components/footer-page.ts";
-import { ifDefined } from "lit/directives/if-defined.js";
 
 @customElement("home-page")
 export class HomePage extends LitElement {
@@ -40,16 +39,10 @@ export class HomePage extends LitElement {
     }
   }
 
-  _cerrarSesion() {
-    localStorage.removeItem("user");
-    window.location.reload();
-  }
-
   render() {
     return html`
       <header-page></header-page>
       <article-page></article-page>
-      <button @click=${this._cerrarSesion}>Cerrar sesión</button>
       <footer-page></footer-page>
     `;
   }

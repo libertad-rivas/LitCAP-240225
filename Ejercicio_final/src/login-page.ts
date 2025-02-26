@@ -1,11 +1,13 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 import "./components/header-page.ts";
-import "./components/footer-page.ts";
 import "./components/form-login.ts";
+import "./components/footer-page.ts";
 
 @customElement("login-page")
 export class LoginPage extends LitElement{
+
+    
 
     connectedCallback() {
         super.connectedCallback();

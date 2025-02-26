@@ -6,19 +6,25 @@ export class ArticlePage extends LitElement {
   static styles = css`
     article {
       margin: 130px 120px;
-      background-color: #93187bc5;
+      background-color: #B7B1F2;
       padding: 20px;
       border-radius: 20px;
       width: 30%;
       box-shadow: 2px 4px 10px black;
       text-align: center;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
+      transition: background-color 0.3s ease;
+      border: 3px solid black
     }
 
 
     article:hover {
       background-color: #dc7cd4;
-      box-shadow: 10px 10px 100px #ff3cb8;
+      box-shadow: 1px 1px 50px 5px #A31D1D;
+      border: 3px solid white;
+      color: white;
+      /* box-shadow: h-offset v-offset blur spread color; */
+
     }
     
     img {

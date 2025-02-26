@@ -26,6 +26,8 @@ export class FooterPage extends LitElement {
       text-align: center;
       width: 100%;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: #000000;
+      color: white;
     }
   `;
 
