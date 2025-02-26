@@ -1,9 +1,66 @@
-import { html, LitElement } from "lit";
+import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { emailValido, passwordValida } from "../utils/form-utils";
+import "../home-page";
 
 @customElement("form-login")
 export class FormLogin extends LitElement {
+
+  static styles = css`
+    input {
+      background-color: #b4b0b0;
+      border-radius: 20px;
+      border: 2px solid;
+      padding: 5px;
+    }
+
+    button {
+      border-radius: 10px;
+      padding: 10px;
+      border: 2px solid black;
+      background-color: #ffcc32;
+      color: black;
+    }
+
+    .error {
+      color: red;
+      border: 2px solid red;
+    }
+
+    .invalid:hover {
+      background-color: red;
+    }
+
+    .valid:hover{
+        background-color: #a7ff95;
+    }
+
+    .errorMsg{
+        color: red;
+    }
+
+    :host{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh;  */
+      width: 100%;
+    }
+
+    .cajaForm{
+      margin: 130px 120px;
+      background-color: #e0eedfc5;
+      padding: 20px;
+      border-radius: 20px;
+      width: 30%;
+      box-shadow: 2px 4px 10px black;
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  `;
+
+
+
   @state()
   email: string = "";
 
@@ -26,14 +83,20 @@ export class FormLogin extends LitElement {
     this.passwordError = !passwordValida(this.password);
   }
 
+  _manejandoLogin(){
+    if (emailValido(this.email) && passwordValida(this.password)){
+      localStorage.setItem("user", JSON.stringify({email : this.email}));
+
+      window.location.href = "../home-page.ts";
+    }
+  }
+
   render() {
     const formInvalido: boolean =
       !emailValido(this.email) || !passwordValida(this.password);
 
     return html`
-      <div class="Apunte">
-        <h1>Ejercicio 2</h1>
-        <h2>Formulario</h2>
+      <div class="cajaForm">
 
         <p>Correo:</p>
         <input
@@ -58,6 +121,7 @@ export class FormLogin extends LitElement {
           <button
             ?disabled=${formInvalido}
             class=${formInvalido ? "invalid" : "valid"}
+            @click=${this._manejandoLogin}
           >
             Enviar
           </button>
