@@ -7,6 +7,15 @@ import "./components/form-login.ts";
 @customElement("login-page")
 export class LoginPage extends LitElement{
 
+    connectedCallback() {
+        super.connectedCallback();
+        const user = localStorage.getItem("user");
+
+        if(user){
+            window.location.reload();
+        }
+    }
+
     render() {
         return html`
             <header-page></header-page>

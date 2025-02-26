@@ -37,6 +37,7 @@ export class FormLogin extends LitElement {
 
     .errorMsg{
         color: red;
+        font-size: 12px;
     }
 
     :host{
@@ -58,8 +59,9 @@ export class FormLogin extends LitElement {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
   `;
-
-
+  
+  @state()
+  username: string = "";
 
   @state()
   email: string = "";
@@ -87,7 +89,7 @@ export class FormLogin extends LitElement {
     if (emailValido(this.email) && passwordValida(this.password)){
       localStorage.setItem("user", JSON.stringify({email : this.email}));
 
-      window.location.href = "../home-page.ts";
+      window.location.reload();
     }
   }
 
@@ -98,6 +100,11 @@ export class FormLogin extends LitElement {
     return html`
       <div class="cajaForm">
 
+        <p> Username:</p>
+        <input 
+        type = "text"
+        />
+
         <p>Correo:</p>
         <input
           type="text"
@@ -106,7 +113,7 @@ export class FormLogin extends LitElement {
           class=${this.emailError ? "error" : ""}
         />
         ${this.emailError
-          ? html` <p class="errorMsg">Ingresa un correo válida</p> `
+          ? html` <p class="errorMsg">Ingresa un correo válido</p> `
           : ""}
 
         <p>Contraseña:</p>
@@ -116,6 +123,10 @@ export class FormLogin extends LitElement {
           .value=${this.password}
           class=${this.passwordError ? "error" : ""}
         />
+        ${this.passwordError ? 
+          html `<p class="errorMsg">Ingresa una contraseña válida</p>`
+          : ""
+        }
 
         <p>
           <button

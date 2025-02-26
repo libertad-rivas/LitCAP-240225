@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 
 @customElement("article-page")
 export class ArticlePage extends LitElement {
@@ -34,6 +34,9 @@ export class ArticlePage extends LitElement {
     }
 
   `;
+
+  @property ({type: String, reflect:true})
+  userEmail = "";
 
   render() {
     return html`
