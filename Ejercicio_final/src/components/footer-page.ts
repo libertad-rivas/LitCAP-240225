@@ -5,25 +5,35 @@ import { customElement } from "lit/decorators.js";
 export class FooterPage extends LitElement {
   static styles = css`
     :host {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;    
-        background-color: pink;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+
+    }
+    :host(:hover) {
+      background-color: lightblue;
+      box-shadow: 2px 4px 10px black;
 
     }
 
-    footer{
-        text-align: center;
+    footer {
+      text-align: center;
+      width: 100%;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-
   `;
 
   render() {
     return html`
       <footer>
-        <h1>Adiós.</h1> 
-        <h3> Atte: Footer</h3>
+        <h2>Adiós.</h2>
+        <h4>Atte: Footer</h4>
       </footer>
     `;
   }
